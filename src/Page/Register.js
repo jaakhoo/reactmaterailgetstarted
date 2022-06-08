@@ -13,7 +13,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Paper } from "@mui/material";
-import { useNavigate, Link as Domlink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Copyright(props) {
   return (
@@ -35,7 +35,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function LoginPage() {
+export default function Register() {
   const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -63,7 +63,7 @@ export default function LoginPage() {
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Sign in
+              Create New Account
             </Typography>
             <Box
               component="form"
@@ -91,45 +91,30 @@ export default function LoginPage() {
                 id="password"
                 autoComplete="current-password"
               />
-              <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
-              />
+
               <Button
                 type="submit"
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Sign In
+                Register
               </Button>
               <Grid container>
-                <Grid item xs>
-                  <Link
-                    component="button"
-                    onClick={() => {
-                      navigate("/forgot");
-                    }}
-                    variant="body2"
-                  >
-                    Forgot password?
-                  </Link>
-                </Grid>
                 <Grid item>
                   <Link
-                    href="#"
+                    component="button"
                     variant="body2"
                     onClick={() => {
-                      navigate("/register");
+                      navigate("/login");
                     }}
                   >
-                    {"Don't have an account? Sign Up"}
+                    {"Already have Account? Sign In"}
                   </Link>
                 </Grid>
               </Grid>
             </Box>
           </Box>
-          <Copyright sx={{ mt: 8, mb: 4 }} />
         </Container>
       </ThemeProvider>
     </Paper>
