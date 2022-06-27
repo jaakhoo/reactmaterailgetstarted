@@ -5,13 +5,17 @@ function Protect(props) {
   const CMP = props.CMP;
   const navigate = useNavigate();
   useEffect(() => {
-    if (localStorage.getItem("Token")) {
+    if (localStorage.getItem("token")) {
     } else {
-      navigate("/");
+      navigate("/login");
     }
   }, []);
 
-  return <div></div>;
+  return (
+    <div>
+      <CMP />
+    </div>
+  );
 }
 
 export default Protect;

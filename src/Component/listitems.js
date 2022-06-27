@@ -28,82 +28,67 @@ const smenudata = [
     url: "/demo",
   },
 ];
+const menudata = [
+  {
+    text: "Dashboard",
+    icon: <AssignmentIcon />,
+    url: "/dashboard",
+  },
+  {
+    text: "Demo Env Health",
+    icon: <AssignmentIcon />,
+    url: "/demo",
+  },
+  {
+    text: "Shutdown Env Health",
+    icon: <AssignmentIcon />,
+    url: "/demo",
+  },
+  {
+    text: "Start Env Health",
+    icon: <AssignmentIcon />,
+    url: "/demo",
+  },
+  {
+    text: "Contact Us",
+    icon: <AssignmentIcon />,
+    url: "/demo",
+  },
+  {
+    text: "Feedback",
+    icon: <AssignmentIcon />,
+    url: "/demo",
+  },
+  {
+    text: "Demo Report",
+    icon: <AssignmentIcon />,
+    url: "/demoreport",
+  },
+  {
+    text: "Add Use Case",
+    icon: <AssignmentIcon />,
+    url: "/addusecase",
+  },
+  {
+    text: "Add Use Diagnosis",
+    icon: <AssignmentIcon />,
+    url: "/demo",
+  },
+  {
+    text: "IAuto Moc-Report",
+    icon: <AssignmentIcon />,
+    url: "/demo",
+  },
+];
 export const mainListItems = (
   <React.Fragment>
-    <ListItemButton component="a" href="/home">
-      <ListItemIcon>
-        <DashboardIcon />
-      </ListItemIcon>
+    {menudata.map((row) => (
+      <ListItemButton component={Link} to={row.url}>
+        <ListItemIcon>{row.icon}</ListItemIcon>
 
-      <ListItemText primary="Demo Health" />
-    </ListItemButton>
-
-    <ListItemButton>
-      <ListItemIcon>
-        <ShoppingCartIcon />
-      </ListItemIcon>
-
-      <ListItemText primary="Shutdown Demo" />
-    </ListItemButton>
-
-    <ListItemButton>
-      <ListItemIcon>
-        <PeopleIcon />
-      </ListItemIcon>
-
-      <ListItemText primary="Start Demo" />
-    </ListItemButton>
-
-    <ListItemButton>
-      <ListItemIcon>
-        <BarChartIcon />
-      </ListItemIcon>
-
-      <ListItemText primary="Contact Us" />
-    </ListItemButton>
-
-    <ListItemButton>
-      <ListItemIcon>
-        <LayersIcon />
-      </ListItemIcon>
-
-      <ListItemText primary="Feedback" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <LayersIcon />
-      </ListItemIcon>
-
-      <ListItemText primary="Collebration & Situation" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <LayersIcon />
-      </ListItemIcon>
-
-      <ListItemText primary="Demo Report" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <LayersIcon />
-      </ListItemIcon>
-
-      <ListItemText primary="Add Use Case" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <LayersIcon />
-      </ListItemIcon>
-
-      <ListItemText primary="Diagnosis" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <LayersIcon />
-      </ListItemIcon>
-
-      <ListItemText primary="Auto Report" />
-    </ListItemButton>
+        <ListItemText primary={row.text} />
+      </ListItemButton>
+    ))}
   </React.Fragment>
 );
 

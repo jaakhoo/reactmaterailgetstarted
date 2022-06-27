@@ -128,7 +128,7 @@ export default function Header(props) {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Dashboard
+              {title}
             </Typography>
 
             {/* <IconButton color="inherit">

@@ -5,15 +5,22 @@ import Dashboard from "./Page/Dashboard";
 import Header from "./Component/Header";
 import Forgotpass from "./Page/Forgotpass";
 import Register from "./Page/Register";
+import MfaSetup from "./Page/MfaSetup";
+import Protect from "./Component/Protect";
+import UseCase from "./Page/UseCase";
+import DemoReport from "./Page/DemoReport";
 function Rout() {
   return (
     <Router>
       <div>
         <Routes>
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Protect CMP={Dashboard} />} />
           <Route path="/forgot" element={<Forgotpass />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/mfasetup" element={<MfaSetup />} />
+          <Route path="/addusecase" element={<Protect CMP={UseCase} />} />
+          <Route path="/demoreport" element={<Protect CMP={DemoReport} />} />
         </Routes>
       </div>
     </Router>

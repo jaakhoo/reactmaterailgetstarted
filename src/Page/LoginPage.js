@@ -14,6 +14,8 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Paper } from "@mui/material";
 import { useNavigate, Link as Domlink } from "react-router-dom";
+import { userLogin } from "../Service";
+import swal from "sweetalert";
 
 function Copyright(props) {
   return (
@@ -40,10 +42,22 @@ export default function LoginPage() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
+    const body = {
+      username: data.get("email"),
       password: data.get("password"),
-    });
+    };
+    userLogin(body)
+      .then(({ data }) => {
+        localStorage.setItem("token", data.token);
+        if (data.two_factor_enabled == false) {
+          navigate("/mfasetup");
+        } else {
+          navigate("/dashboard");
+        }
+      })
+      .catch((err) => {
+        swal("Oops!", "Username password not correct!", "error");
+      });
   };
 
   return (
