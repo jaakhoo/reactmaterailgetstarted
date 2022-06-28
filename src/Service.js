@@ -74,3 +74,7 @@ export const Update_Usecase = (body) => {
 export const Get_Demo_Report = () => {
   return client.get(`${BASE_URL}/execution_report/`, config());
 };
+
+export const Add_feedback = (body) => {
+  return client.post(`${BASE_URL}/feedback/`, body, config());
+};

@@ -57,7 +57,7 @@ const menudata = [
   {
     text: "Feedback",
     icon: <AssignmentIcon />,
-    url: "/demo",
+    url: "/feedback",
   },
   {
     text: "Demo Report",
